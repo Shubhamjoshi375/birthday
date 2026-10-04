@@ -1,18 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday My Love</title>
+  <title>Happy Birthday Sanu ❤️</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
       background: radial-gradient(circle at top, #ffdde8, #ffe9f2, #ffd1dc, #17001f);
     }
+
     .font-love { font-family: 'Pacifico', cursive; }
 
     .heart {
@@ -23,6 +28,7 @@
       z-index: 1;
       pointer-events: none;
     }
+
     @keyframes floatHeart {
       0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
       15% { opacity: 1; }
@@ -40,6 +46,7 @@
       z-index: 2;
       pointer-events: none;
     }
+
     @keyframes sparkle {
       0%, 100% { transform: scale(0); opacity: 0; }
       50% { transform: scale(1.3); opacity: 1; }
@@ -49,7 +56,9 @@
       display: none;
       animation: popIn .8s ease forwards;
     }
+
     .step.active { display: block; }
+
     @keyframes popIn {
       from { opacity: 0; transform: translateY(35px) scale(.95); }
       to { opacity: 1; transform: translateY(0) scale(1); }
@@ -73,6 +82,7 @@
       cursor: pointer;
       box-shadow: 0 20px 45px rgba(255, 45, 130, .45);
     }
+
     .gift-box::before {
       content: '';
       position: absolute;
@@ -82,6 +92,7 @@
       left: 61px;
       top: 0;
     }
+
     .gift-box::after {
       content: '';
       position: absolute;
@@ -91,6 +102,7 @@
       left: -10px;
       top: 42px;
     }
+
     .gift-lid {
       width: 175px;
       height: 38px;
@@ -101,9 +113,11 @@
       left: -12px;
       transition: .5s ease;
     }
+
     .gift-box.open .gift-lid {
       transform: rotate(-25deg) translate(-35px, -45px);
     }
+
     @keyframes bounceGift {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
@@ -117,6 +131,7 @@
       animation: balloonFloat 4s ease-in-out infinite;
       z-index: 0;
     }
+
     .balloon::after {
       content: '';
       position: absolute;
@@ -126,6 +141,7 @@
       left: 50%;
       top: 76px;
     }
+
     @keyframes balloonFloat {
       0%,100% { transform: translateY(0) rotate(-3deg); }
       50% { transform: translateY(-28px) rotate(4deg); }
@@ -137,6 +153,7 @@
       overflow: hidden;
       animation: typing 3.5s steps(40), blink .7s infinite;
     }
+
     @keyframes typing { from { width: 0; } to { width: 100%; } }
     @keyframes blink { 50% { border-color: transparent; } }
 
@@ -146,6 +163,7 @@
       height: 135px;
       margin: 0 auto;
     }
+
     .cake-base {
       position: absolute;
       bottom: 0;
@@ -155,6 +173,7 @@
       border-radius: 18px 18px 28px 28px;
       box-shadow: 0 18px 35px rgba(255, 47, 134, .38);
     }
+
     .cake-top {
       position: absolute;
       bottom: 70px;
@@ -163,6 +182,7 @@
       background: #fff7fb;
       border-radius: 50%;
     }
+
     .candle {
       position: absolute;
       bottom: 105px;
@@ -172,6 +192,7 @@
       background: repeating-linear-gradient(45deg, #fff, #fff 6px, #ff4d94 6px, #ff4d94 12px);
       border-radius: 8px;
     }
+
     .flame {
       position: absolute;
       bottom: 146px;
@@ -179,10 +200,11 @@
       width: 20px;
       height: 30px;
       background: radial-gradient(circle, #fff7a1 20%, #ffb300 60%, #ff4d00 100%);
-      border-radius: 50% 50% 50% 50%;
+      border-radius: 50%;
       animation: flame .25s infinite alternate;
       transform-origin: bottom;
     }
+
     @keyframes flame {
       from { transform: scale(1) rotate(-3deg); }
       to { transform: scale(1.15) rotate(3deg); }
@@ -196,19 +218,50 @@
       animation: confettiFall 3s linear forwards;
       z-index: 40;
     }
+
     @keyframes confettiFall {
       to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
     }
 
     .shake { animation: shake .45s ease; }
+
     @keyframes shake {
       0%,100% { transform: translateX(0); }
       25% { transform: translateX(-8px); }
       75% { transform: translateX(8px); }
     }
+
+    .message-card {
+      max-height: 55vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: auto;
+      scrollbar-color: #ff4d94 rgba(255, 255, 255, 0.35);
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      padding-right: 14px;
+    }
+
+    .message-card::-webkit-scrollbar { width: 8px; }
+
+    .message-card::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 10px;
+    }
+
+    .message-card::-webkit-scrollbar-thumb {
+      background: #ff4d94;
+      border-radius: 10px;
+    }
+
+    .message-card::-webkit-scrollbar-thumb:hover {
+      background: #e91e63;
+    }
   </style>
 </head>
+
 <body class="min-h-screen flex items-center justify-center px-4 text-black relative">
+
   <div class="balloon bg-pink-400 left-8 top-20"></div>
   <div class="balloon bg-purple-400 right-10 top-28" style="animation-delay:1s"></div>
   <div class="balloon bg-yellow-300 left-1/4 bottom-16" style="animation-delay:2s"></div>
@@ -216,62 +269,126 @@
 
   <main class="relative z-10 w-full max-w-3xl">
     <div class="glass rounded-[2rem] p-6 sm:p-10 text-center min-h-[560px] flex items-center justify-center">
+
+      <!-- Welcome Screen -->
       <section class="step active w-full" data-step="0">
-        <p class="uppercase tracking-[.35em] text-sm text-black mb-4">A tiny surprise for you</p>
-        <h1 class="font-love text-5xl sm:text-7xl text-black drop-shadow-lg mb-6">Hey Beautiful</h1>
-        <p class="text-lg sm:text-xl text-black/90 max-w-xl mx-auto mb-8">Today is not just another day. It is the day my favorite person came into this world.</p>
-        <button onclick="nextStep()" class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">Open Your Surprise 💝</button>
+        <p class="uppercase tracking-[.35em] text-sm text-black mb-4">
+          Meri Sanu ke liye ek chhota sa surprise ❤️
+        </p>
+
+        <h1 class="font-love text-5xl sm:text-7xl text-black drop-shadow-lg mb-6">
+          Happy Bday Sanu ❤️
+        </h1>
+
+        <p class="text-lg sm:text-xl text-black/90 max-w-xl mx-auto mb-8">
+          Aaj ka din mere liye bahut special hai, kyunki aaj hi ke din meri duniya ka sabse pyaara insaan is duniya mein aaya tha. 🥹❤️
+        </p>
+
+        <button onclick="nextStep()" class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">
+          Open Your Surprise 💝
+        </button>
       </section>
 
+      <!-- Heart Game -->
       <section class="step w-full" data-step="1">
-        <h2 class="font-love text-4xl sm:text-6xl mb-5">First, catch my heart</h2>
-        <p class="mb-6 text-black/90">Click the floating heart 5 times to unlock your birthday wish.</p>
+        <h2 class="font-love text-4xl sm:text-6xl mb-5">
+          Meri Jaan, Dil Sambhal Ke 💖
+        </h2>
+
+        <p class="mb-6 text-black/90">
+          Mere dil tak pahunchne ke liye 5 hearts pakad, phir tere liye ek dil ki baat hai. 💗
+        </p>
+
         <div class="relative h-72 rounded-3xl bg-white/15 overflow-hidden border border-white/20" id="heartGame">
           <button id="catchHeart" class="absolute text-5xl hover:scale-125 transition">💖</button>
-          <div class="absolute left-4 top-4 bg-white/25 px-4 py-2 rounded-full">Caught: <span id="score">0</span>/5</div>
+          <div class="absolute left-4 top-4 bg-white/25 px-4 py-2 rounded-full">
+            Caught: <span id="score">0</span>/5
+          </div>
         </div>
       </section>
 
+      <!-- Gift Screen -->
       <section class="step w-full" data-step="2">
-        <h2 class="font-love text-4xl sm:text-6xl mb-7 text-transform: uppercase;">A Gift For You</h2>
-        <p class="mb-10 text-black/90 ">Tap the gift box gently.</p>
+        <h2 class="font-love text-4xl sm:text-6xl mb-7">
+          Meri Sanu Ka Gift 🎁
+        </h2>
+
+        <p class="mb-10 text-black/90">
+          Is gift ko khol, meri jaan… ismein mera saara pyaar hai. ❤️
+        </p>
+
         <div class="gift-box" onclick="openGift(this)">
           <div class="gift-lid"></div>
         </div>
-        <p id="giftMessage" class="hidden mt-10 text-2xl font-semibold text-black">Inside this gift is my love, my prayers, and my forever smile for you. 🥺❤️</p>
+
+        <p id="giftMessage" class="hidden mt-10 text-2xl font-semibold text-black">
+          Is gift mein mera pyaar, meri duayein aur ek vaada hai—chahe kitni bhi doori ho, mera dil hamesha tera hi rahega, Sanu. 🥺❤️
+        </p>
       </section>
 
+      <!-- Cake Screen -->
       <section class="step w-full" data-step="3">
-        
         <div class="cake mb-8">
           <div class="flame" id="flame"></div>
           <div class="candle"></div>
           <div class="cake-top"></div>
           <div class="cake-base"></div>
         </div>
-        <p class="mb-6 text-black/90">Click the candle flame to blow it out.</p>
-        <button onclick="blowCandle()" class="bg-pink-600 hover:bg-pink-700 text-black px-8 py-4 rounded-full font-bold shadow-xl transition">Blow Candle 🕯️</button>
+
+        <p class="mb-6 text-black/90">
+          Ek wish maang, meri jaan… meri wish toh hamesha teri khushi hai. 🕯️❤️
+        </p>
+
+        <button onclick="blowCandle()" class="bg-pink-600 hover:bg-pink-700 text-black px-8 py-4 rounded-full font-bold shadow-xl transition">
+          Make a Wish, Sanu 🕯️
+        </button>
       </section>
 
+      <!-- Final Birthday Message -->
       <section class="step w-full" data-step="4">
-        <p class="uppercase tracking-[.35em] text-sm text-pink-100 mb-4">Final Message</p>
-        <h2 class="font-love text-5xl sm:text-7xl mb-6">Happy Birthday My Love 🎂</h2>
+        <p class="uppercase tracking-[.35em] text-sm text-pink-100 mb-4">
+          Sirf Meri Sanu Ke Liye ❤️
+        </p>
+
+        <h2 class="font-love text-5xl sm:text-7xl mb-6">
+          Happy Bday Sanu 🎂❤️
+        </h2>
+
         <div class="max-w-2xl mx-auto text-left bg-white/20 rounded-3xl p-6 border border-white/25">
           <p class="text-lg leading-8 text-black/95">
-            On your special day, I just want to say that you are one of the most beautiful blessings in my life. Your smile makes my world softer, your presence makes my heart peaceful, and your love makes every day feel special.
+            Happy Birthday meri Sanu, meri jaan, meri sabse pyaari khushi. ❤️🥹
+            5 October 2020 ko tera pehla birthday tha mere saath… aur aaj
+            5 October 2026 ko, hum saath mein apna 6th birthday celebrate
+            kar rahe hain. Soch jaan, waqt kitna aage nikal gaya, par tere
+            liye mere dil mein jo pyaar hai na, woh aaj bhi utna hi sachcha
+            hai—shayad pehle se bhi zyada. ❤️
           </p>
+
           <p class="text-lg leading-8 text-black/95 mt-4">
-            May Allah bless you with endless happiness, health, success, love, and every dream your heart silently prays for. I am so lucky to have you. ❤️
+            Jaan, humare beech chahe kitni bhi dooriyan aa jaayein, halaat
+            kitne bhi mushkil ho jaayein, bas tu meri banke rehna aur mujhse
+            aise hi pyaar karna. Please kabhi apni woh pyaari si nature mat
+            badalna—meri wahi Sanu rehna jisse mera dil pehli baar itna jud
+            gaya tha. Tu jaisi meri zindagi mein na koi hai, na koi teri jagah
+            le sakta hai. Mere liye tu hi hai, sirf tu. 🥺❤️ Allah teri har
+            dua qubool kare, teri aankhon mein hamesha khushi rakhe aur tere
+            saare sapne poore kare. Main har doori ke paar bhi tera hi rehna
+            chahta hoon. Happy Birthday, meri jaan. I love you, Sanu. ❤️
           </p>
         </div>
-        <button onclick="restartWish()" class="mt-8 bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">Replay Magic ✨</button>
+
+        <button onclick="restartWish()" class="mt-8 bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition">
+          Phir Se Dekh, Meri Jaan ✨
+        </button>
       </section>
+
     </div>
   </main>
 
   <script>
     let currentStep = 0;
     let score = 0;
+
     const steps = document.querySelectorAll('.step');
     const catchHeart = document.getElementById('catchHeart');
     const heartGame = document.getElementById('heartGame');
@@ -281,6 +398,7 @@
       steps.forEach(step => step.classList.remove('active'));
       steps[index].classList.add('active');
       currentStep = index;
+
       if (index === 1) moveHeart();
       if (index === 4) launchConfetti();
     }
@@ -324,7 +442,9 @@
       score++;
       scoreEl.textContent = score;
       catchHeart.classList.add('shake');
+
       setTimeout(() => catchHeart.classList.remove('shake'), 450);
+
       if (score >= 5) {
         setTimeout(() => showStep(2), 500);
       } else {
@@ -347,6 +467,7 @@
 
     function launchConfetti(amount = 100) {
       const colors = ['#ff4d94', '#fff176', '#7c4dff', '#00e5ff', '#ffffff', '#ff1744'];
+
       for (let i = 0; i < amount; i++) {
         const c = document.createElement('div');
         c.className = 'confetti';
@@ -371,5 +492,6 @@
     createFloatingHearts();
     createSparkles();
   </script>
+
 </body>
 </html>
