@@ -11,103 +11,112 @@
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100vh;padding:25px 12px;
-  font-family:Poppins,sans-serif;overflow-x:hidden;
-  background:radial-gradient(circle at top,#ffdde8,#ffe9f2,#ffd1dc,#17001f);
-  color:#241020;
+ margin:0;min-height:100vh;padding:24px 12px;
+ font-family:Poppins,sans-serif;color:#48142f;
+ background:radial-gradient(circle at top,#fff0f5,#ffd8e8,#ffc1da,#4a1239);
+ overflow-x:hidden;
 }
 .font-love{font-family:Pacifico,cursive}
 .glass{
-  background:rgba(255,255,255,.28);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,.45);
-  box-shadow:0 25px 60px rgba(121,0,65,.28);
+ background:rgba(255,255,255,.48);
+ backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.65);
+ box-shadow:0 20px 60px #7a17422b;
 }
-.step{display:none;animation:popIn .7s ease}
+.step{display:none;animation:appear .7s ease}
 .step.active{display:block}
-@keyframes popIn{
-  from{opacity:0;transform:translateY(25px) scale(.96)}
-  to{opacity:1;transform:translateY(0) scale(1)}
+@keyframes appear{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.memory-photo{
+ width:100%;max-width:340px;height:auto;max-height:420px;
+ object-fit:cover;display:block;margin:20px auto;
+ border:5px solid white;border-radius:24px;
+ box-shadow:0 12px 35px #9d225244;
+}
+.photo-caption{
+ font-size:14px;line-height:1.8;text-align:center;
+ font-style:italic;margin:12px auto 24px;max-width:400px;
 }
 .heart{
-  position:fixed;bottom:-40px;pointer-events:none;
-  animation:floatHeart linear forwards;z-index:1;
+ position:fixed;bottom:-40px;pointer-events:none;
+ animation:floatHeart linear forwards;z-index:1;
 }
 @keyframes floatHeart{
-  to{transform:translateY(-115vh) rotate(360deg);opacity:0}
+ to{transform:translateY(-115vh) rotate(360deg);opacity:0}
 }
 .sparkle{
-  position:fixed;width:6px;height:6px;border-radius:50%;
-  background:white;box-shadow:0 0 12px white;
-  animation:twinkle 2s infinite;pointer-events:none;z-index:1
+ position:fixed;width:5px;height:5px;border-radius:50%;
+ background:white;box-shadow:0 0 12px white;
+ animation:twinkle 2s infinite;pointer-events:none;z-index:1
 }
-@keyframes twinkle{0%,100%{opacity:0}50%{opacity:1}}
+@keyframes twinkle{50%{opacity:.2}}
 .gift-box{
-  position:relative;width:150px;height:115px;margin:45px auto 0;
-  border-radius:12px;background:linear-gradient(135deg,#ff3f8f,#ff8fb8);
-  cursor:pointer;animation:bounce 1.5s infinite;
-  box-shadow:0 15px 35px #ff4d9466;
+ position:relative;width:150px;height:110px;margin:55px auto 20px;
+ border-radius:12px;background:linear-gradient(135deg,#ff3985,#ff9bc1);
+ cursor:pointer;animation:bounce 1.5s infinite;
 }
 .gift-box:before{
-  content:"";position:absolute;left:61px;top:0;width:28px;height:115px;
-  background:#fff4b8
+ content:"";position:absolute;left:61px;top:0;width:28px;height:110px;
+ background:#fff4b8
 }
 .gift-box:after{
-  content:"";position:absolute;left:-10px;top:42px;width:170px;height:28px;
-  background:#fff4b8
+ content:"";position:absolute;left:-10px;top:40px;width:170px;height:28px;
+ background:#fff4b8
 }
 .gift-lid{
-  position:absolute;z-index:2;left:-12px;top:-35px;width:175px;height:38px;
-  border-radius:12px;background:#ff3985;transition:.5s
+ position:absolute;z-index:2;left:-10px;top:-32px;width:170px;height:36px;
+ border-radius:10px;background:#ff3985;transition:.5s
 }
-.gift-box.open .gift-lid{transform:rotate(-25deg) translate(-35px,-45px)}
-@keyframes bounce{50%{transform:translateY(-10px)}}
-.cake{position:relative;width:210px;height:140px;margin:20px auto}
+.gift-box.open .gift-lid{transform:rotate(-25deg) translate(-35px,-40px)}
+@keyframes bounce{50%{transform:translateY(-8px)}}
+.cake{position:relative;width:210px;height:150px;margin:30px auto}
 .cake-base{
-  position:absolute;bottom:0;width:210px;height:85px;
-  border-radius:18px 18px 25px 25px;background:linear-gradient(#ff78ad,#ff2f86)
+ position:absolute;bottom:0;width:210px;height:85px;
+ border-radius:18px 18px 25px 25px;background:linear-gradient(#ff78ad,#ff2f86)
 }
 .cake-top{
-  position:absolute;bottom:70px;width:210px;height:40px;
-  border-radius:50%;background:#fff7fb
+ position:absolute;bottom:70px;width:210px;height:40px;
+ border-radius:50%;background:#fff7fb
 }
 .candle{
-  position:absolute;bottom:105px;left:96px;width:18px;height:45px;
-  background:repeating-linear-gradient(45deg,#fff,#fff 6px,#ff4d94 6px,#ff4d94 12px);
-  border-radius:8px
+ position:absolute;bottom:105px;left:96px;width:18px;height:45px;
+ background:repeating-linear-gradient(45deg,#fff 0 6px,#ff4d94 6px 12px);
+ border-radius:8px
 }
 .flame{
-  position:absolute;bottom:146px;left:95px;width:20px;height:30px;
-  border-radius:50%;background:radial-gradient(circle,#fff7a1,#ffb300,#ff4d00);
-  animation:flicker .25s infinite alternate
+ position:absolute;bottom:146px;left:95px;width:20px;height:30px;
+ border-radius:50%;background:radial-gradient(circle,#fff7a1,#ffb300,#ff4d00);
+ animation:flicker .25s infinite alternate
 }
 @keyframes flicker{to{transform:scale(1.15) rotate(4deg)}}
 .confetti{
-  position:fixed;top:-20px;width:10px;height:16px;z-index:50;
-  pointer-events:none;animation:fall 3s linear forwards
+ position:fixed;top:-20px;width:10px;height:16px;z-index:50;
+ pointer-events:none;animation:fall 3s linear forwards
 }
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
 .message-card{
-  max-height:55vh;overflow-y:auto;padding-right:10px;
-  -webkit-overflow-scrolling:touch
-}
-.balloon{
-  position:fixed;width:48px;height:65px;border-radius:50%;
-  animation:bounce 3s infinite;opacity:.7;pointer-events:none;z-index:0
+ max-height:55vh;overflow-y:auto;padding:20px;
+ background:#ffffff65;border:1px solid white;border-radius:22px;
+ text-align:left;line-height:1.9;
 }
 button{cursor:pointer}
+.balloon{
+ position:fixed;width:42px;height:58px;border-radius:50%;
+ opacity:.55;animation:bounce 3s infinite;pointer-events:none;
+}
 @media(max-width:600px){
-  .message-card{max-height:60vh}
+ .message-card{max-height:58vh}
 }
 </style>
 </head>
 
-<body class="flex items-center justify-center">
+<body>
 
-<!-- 🎵 MUSIC: Keep your video in the same folder as this HTML file -->
-<video id="bgMusic" loop playsinline preload="auto"
-       style="display:none">
-  <source src="Untitled 18_720p_1.mp4" type="video/mp4">
+<!-- Music: upload your video into the same repository folder -->
+<video id="bgMusic" loop playsinline preload="auto" style="display:none">
+ <source src="Untitled 18_720p_1.mp4" type="video/mp4">
 </video>
 
 <button id="musicButton" onclick="toggleMusic()"
@@ -115,112 +124,135 @@ button{cursor:pointer}
  🎵 Play Music
 </button>
 
-<div class="balloon bg-pink-400" style="left:5%;top:12%"></div>
-<div class="balloon bg-purple-400" style="right:6%;top:20%;animation-delay:1s"></div>
-<div class="balloon bg-yellow-300" style="left:20%;bottom:10%;animation-delay:2s"></div>
+<div class="balloon bg-pink-400" style="left:4%;top:12%"></div>
+<div class="balloon bg-purple-400" style="right:5%;top:25%"></div>
 
-<main class="relative z-10 w-full max-w-3xl">
-<div class="glass rounded-[2rem] p-6 sm:p-10 text-center min-h-[560px] flex items-center justify-center">
+<main class="relative z-10 w-full max-w-3xl mx-auto">
+<div class="glass rounded-[2rem] p-5 sm:p-10 text-center">
 
-<!-- STEP 1 -->
-<section class="step active w-full" data-step="0">
-<p class="uppercase tracking-widest text-sm mb-4">
-Meri Sanu ke liye ek chhota sa surprise ❤️
+<!-- STEP 1: WELCOME + COUPLE PHOTO -->
+<section class="step active" data-step="0">
+<p class="uppercase tracking-widest text-xs sm:text-sm mb-4">
+A little surprise for my favourite person ❤️
 </p>
-<h1 class="font-love text-5xl sm:text-7xl mb-6">
-Happy Bday Sanu ❤️
+
+<h1 class="font-love text-4xl sm:text-6xl mb-5">
+Happy Birthday Sanu ❤️
 </h1>
-<p class="text-lg mb-8">
+
+<img src="couple.jpg"
+ alt="Our favourite memory together"
+ class="memory-photo" loading="eager">
+
+<p class="photo-caption">
+Meri favourite picture, meri favourite person ke saath. 🫶🏻❤️
+</p>
+
+<p class="text-base sm:text-lg leading-8 mb-7">
 Aaj ka din mere liye bahut special hai, kyunki aaj hi ke din meri duniya ka sabse pyaara insaan is duniya mein aaya tha. 🥹❤️
 </p>
+
 <button onclick="startSurprise()"
- class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">
-Open Your Surprise 💝
+ class="bg-pink-600 text-white px-7 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">
+ Open Your Surprise 💝
 </button>
-<p class="text-sm mt-4">🎵 Music ke liye button dabana mat bhoolna!</p>
 </section>
 
-<!-- STEP 2 -->
-<section class="step w-full" data-step="1">
-<h2 class="font-love text-4xl sm:text-6xl mb-5">Meri Jaan, Dil Sambhal Ke 💖</h2>
-<p class="mb-6">Mere dil tak pahunchne ke liye 5 hearts pakad, phir tere liye ek dil ki baat hai. 💗</p>
-<div id="heartGame" class="relative h-72 rounded-3xl bg-white/20 overflow-hidden border border-white/40">
-<button id="catchHeart" onclick="catchOne()"
- class="absolute text-5xl" aria-label="Catch the heart">💖</button>
-<div class="absolute left-4 top-4 bg-white/50 px-4 py-2 rounded-full">
-Caught: <span id="score">0</span>/5
-</div>
+<!-- STEP 2: HEART GAME -->
+<section class="step" data-step="1">
+<h2 class="font-love text-4xl sm:text-5xl mb-5">Meri Jaan, Dil Sambhal Ke 💖</h2>
+<p class="mb-6">Mere dil tak pahunchne ke liye 5 hearts pakad, meri jaan! 💗</p>
+
+<div id="heartGame" class="relative h-72 rounded-3xl bg-white/35 overflow-hidden border border-white">
+ <div class="absolute left-3 top-3 bg-white/80 px-4 py-2 rounded-full">
+  Caught: <span id="score">0</span>/5
+ </div>
+ <button id="catchHeart" onclick="catchOne()"
+ class="absolute text-5xl" style="left:40%;top:45%">💖</button>
 </div>
 </section>
 
-<!-- STEP 3 -->
-<section class="step w-full" data-step="2">
-<h2 class="font-love text-4xl sm:text-6xl mb-7">Meri Sanu Ka Gift 🎁</h2>
-<p class="mb-6">Is gift ko khol, meri jaan… ismein mera saara pyaar hai. ❤️</p>
+<!-- STEP 3: GIFT -->
+<section class="step" data-step="2">
+<h2 class="font-love text-4xl sm:text-5xl mb-5">Meri Sanu Ka Gift 🎁</h2>
+<p>Is gift ko khol, meri jaan… ismein mera saara pyaar hai. ❤️</p>
+
 <div class="gift-box" onclick="openGift(this)" role="button" tabindex="0"
  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGift(this)}">
-<div class="gift-lid"></div>
+ <div class="gift-lid"></div>
 </div>
-<p id="giftMessage" class="hidden mt-10 text-xl font-semibold">
+
+<p id="giftMessage" class="hidden mt-8 text-lg leading-8">
 Is gift mein mera pyaar, meri duayein aur ek vaada hai—chahe kitni bhi doori ho, mera dil hamesha tera hi rahega, Sanu. 🥺❤️
 </p>
 </section>
 
-<!-- STEP 4 -->
-<section class="step w-full" data-step="3">
-<div class="cake mb-8">
-<div class="flame" id="flame"></div>
-<div class="candle"></div>
-<div class="cake-top"></div>
-<div class="cake-base"></div>
+<!-- STEP 4: CAKE -->
+<section class="step" data-step="3">
+<h2 class="font-love text-4xl sm:text-5xl mb-5">Make a Wish, Jaan 🎂</h2>
+
+<div class="cake">
+ <div class="flame" id="flame"></div>
+ <div class="candle"></div>
+ <div class="cake-top"></div>
+ <div class="cake-base"></div>
 </div>
-<p class="mb-6">Ek wish maang, meri jaan… meri wish toh hamesha teri khushi hai. 🕯️❤️</p>
+
+<p class="mb-7">Ek wish maang, meri jaan… meri wish toh hamesha teri khushi hai. 🕯️❤️</p>
+
 <button onclick="blowCandle()"
- class="bg-pink-600 text-white px-8 py-4 rounded-full font-bold shadow-xl">
-Make a Wish, Sanu 🕯️
+ class="bg-pink-600 text-white px-7 py-4 rounded-full font-bold shadow-xl">
+ Blow the Candle 🕯️
 </button>
 </section>
 
-<!-- STEP 5 -->
-<section class="step w-full" data-step="4">
-<p class="uppercase tracking-widest text-sm mb-4">Sirf Meri Sanu Ke Liye ❤️</p>
-<h2 class="font-love text-4xl sm:text-6xl mb-6">Happy Bday Sanu 🎂❤️</h2>
+<!-- STEP 5: PHOTO + LOVE LETTER -->
+<section class="step" data-step="4">
+<p class="uppercase tracking-widest text-sm mb-3">Sirf Meri Sanu Ke Liye ❤️</p>
+<h2 class="font-love text-4xl sm:text-5xl mb-5">Happy Birthday Sanu 🎂❤️</h2>
 
-<div class="message-card max-w-2xl mx-auto text-left bg-white/35 rounded-3xl p-6 border border-white/50">
+<img src="rose.jpg"
+ alt="A special rose memory for Sanu"
+ class="memory-photo" loading="lazy">
 
-<p class="text-lg leading-8">
-Happy Birthday, meri Sanu, meri jaan, meri duniya. ❤️🥹🎂
+<p class="photo-caption">
+Tujhe phool dena achha lagta hai, par meri life mein tera hona usse bhi zyada special hai. 🌹❤️
 </p>
 
-<p class="text-lg leading-8 mt-4">
+<div class="message-card">
+<p class="text-lg">
+<strong>Happy Birthday, meri Sanu, meri jaan, meri duniya. ❤️🥹🎂</strong>
+</p>
+
+<p class="mt-4">
 Baby, pata hai? Kabhi-kabhi main sochta hoon ki 5 October 2020 se lekar aaj tak kitna kuch badal gaya, lekin ek cheez aaj bhi nahi badli—<strong>mera tere liye pyaar.</strong> Tu aaj bhi mere chehre ki smile, mere dil ka sukoon aur meri zindagi ka sabse khoobsurat hissa hai. ❤️🫶🏻
 </p>
 
-<p class="text-lg leading-8 mt-4">
+<p class="mt-4">
 Jaan, kaash aaj main tere paas hota, tujhe apne gale se laga pata, tere forehead par kiss karke sabse pehle tujhe birthday wish karta. Teri aankhon mein dekhkar tujhe batata ki tu mere liye kitni special hai. Par abhi hum door hain, aur main bas yahi chahta hoon ki meri ye chhoti si surprise teri smile ki wajah ban jaaye. 🥺❤️‍🩹
 </p>
 
-<p class="text-lg leading-8 mt-4">
+<p class="mt-4">
 Sanu, mujhe tere saath sirf aaj ka din nahi, balki apni zindagi ke har birthday, har khushi, har mushkil aur har chhota-bada pal share karna hai. Mujhe teri woh cute si smile, teri baatein, tera gussa, tera bachpana aur tera woh pyaara sa andaaz hamesha apne paas chahiye. Tu perfect hai ya nahi, ye matter nahi karta—<strong>mere liye tu meri favourite person hai, bilkul apni wali Sanu.</strong> 💗
 </p>
 
-<p class="text-lg leading-8 mt-4">
+<p class="mt-4">
 Bas jaan, waqt chahe kitna bhi badal jaaye, humare beech kitni bhi dooriyan aa jaayein, hum ek-doosre ka haath kabhi na chhodein. Main chahta hoon ki jab bhi tu apni life mein peeche mudkar dekhe, tujhe hamesha ek aisa insaan mile jo tujhe dil se chahta ho, teri khushi mein khush ho aur mushkil waqt mein bhi tera saath dena chahe. ❤️♾️
 </p>
 
-<p class="text-lg leading-8 mt-4">
+<p class="mt-4">
 <strong>Happy Birthday, meri Sanu.</strong> Aaj ka din tere jaisa hi beautiful ho. Hamesha hansti rehna, khush rehna aur meri life mein aise hi rehna. Tu mere liye sirf pyaar nahi, meri sabse pyaari feeling hai. Aur agar mujhe dobara choose karne ka mauka mile, toh main har baar tujhe hi choose karunga. 🥹💋
 </p>
 
-<p class="text-lg leading-8 mt-4">
-I love you more than words can ever explain, meri jaan. <strong>Tu meri aaj bhi hai, meri kal bhi rahegi.</strong> ❤️🫂
+<p class="mt-4">
+I love you more than words can ever explain, meri jaan.
+<strong>Tu meri aaj bhi hai, meri kal bhi rahegi.</strong> ❤️🫂
 </p>
-
 </div>
 
 <button onclick="restartWish()"
- class="mt-8 bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl">
-Phir Se Dekh, Meri Jaan ✨
+ class="mt-7 bg-white text-pink-600 px-7 py-4 rounded-full font-bold shadow-xl">
+ Phir Se Dekh, Meri Jaan ✨
 </button>
 </section>
 
@@ -230,6 +262,7 @@ Phir Se Dekh, Meri Jaan ✨
 <script>
 let currentStep=0;
 let score=0;
+
 const steps=document.querySelectorAll('.step');
 const game=document.getElementById('heartGame');
 const heart=document.getElementById('catchHeart');
@@ -237,119 +270,115 @@ const music=document.getElementById('bgMusic');
 const musicButton=document.getElementById('musicButton');
 
 function showStep(index){
-  steps.forEach(s=>s.classList.remove('active'));
-  steps[index].classList.add('active');
-  currentStep=index;
-  window.scrollTo({top:0,behavior:'smooth'});
-  if(index===1) moveHeart();
-  if(index===4) launchConfetti(120);
+ steps.forEach(s=>s.classList.remove('active'));
+ steps[index].classList.add('active');
+ currentStep=index;
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(index===1) moveHeart();
+ if(index===4) launchConfetti(120);
 }
 
 async function startSurprise(){
-  try{
-    await music.play();
-    musicButton.textContent='⏸ Pause Music';
-  }catch(error){
-    musicButton.textContent='🎵 Play Music';
-  }
-  showStep(1);
+ showStep(1);
+ try{
+  await music.play();
+  musicButton.textContent='⏸ Pause Music';
+ }catch(error){
+  musicButton.textContent='🎵 Play Music';
+ }
 }
 
 async function toggleMusic(){
-  if(music.paused){
-    try{
-      await music.play();
-      musicButton.textContent='⏸ Pause Music';
-    }catch(error){
-      alert('Video file ko HTML ke saath same folder mein rakho aur dobara try karo.');
-    }
-  }else{
-    music.pause();
-    musicButton.textContent='🎵 Play Music';
+ if(music.paused){
+  try{
+   await music.play();
+   musicButton.textContent='⏸ Pause Music';
+  }catch(error){
+   alert('Video file ko repository mein upload kar aur filename check kar.');
   }
+ }else{
+  music.pause();
+  musicButton.textContent='🎵 Play Music';
+ }
 }
 
-music.addEventListener('ended',()=>{
-  musicButton.textContent='🎵 Play Music';
-});
-
 function moveHeart(){
-  const maxX=Math.max(0,game.clientWidth-65);
-  const maxY=Math.max(0,game.clientHeight-65);
-  heart.style.left=Math.random()*maxX+'px';
-  heart.style.top=(55+Math.random()*Math.max(0,maxY-55))+'px';
+ const maxX=Math.max(0,game.clientWidth-65);
+ const maxY=Math.max(0,game.clientHeight-65);
+ heart.style.left=Math.random()*maxX+'px';
+ heart.style.top=(55+Math.random()*Math.max(0,maxY-55))+'px';
 }
 
 function catchOne(){
-  if(currentStep!==1||score>=5)return;
-  score++;
-  document.getElementById('score').textContent=score;
-  if(score>=5){
-    heart.style.display='none';
-    setTimeout(()=>showStep(2),600);
-  }else moveHeart();
+ if(currentStep!==1||score>=5)return;
+ score++;
+ document.getElementById('score').textContent=score;
+ if(score>=5){
+  heart.style.display='none';
+  setTimeout(()=>showStep(2),500);
+ }else moveHeart();
 }
 
 function openGift(box){
-  if(box.classList.contains('open'))return;
-  box.classList.add('open');
-  document.getElementById('giftMessage').classList.remove('hidden');
-  launchConfetti(50);
-  setTimeout(()=>showStep(3),2500);
+ if(box.classList.contains('open'))return;
+ box.classList.add('open');
+ document.getElementById('giftMessage').classList.remove('hidden');
+ launchConfetti(60);
+ setTimeout(()=>showStep(3),2200);
 }
 
 function blowCandle(){
-  document.getElementById('flame').style.display='none';
-  launchConfetti(120);
-  setTimeout(()=>showStep(4),1200);
+ document.getElementById('flame').style.display='none';
+ launchConfetti(100);
+ setTimeout(()=>showStep(4),1000);
 }
 
 function launchConfetti(amount=100){
-  const colors=['#ff4d94','#fff176','#7c4dff','#00e5ff','#ffffff','#ff1744'];
-  for(let i=0;i<amount;i++){
-    const c=document.createElement('div');
-    c.className='confetti';
-    c.style.left=Math.random()*100+'vw';
-    c.style.background=colors[Math.floor(Math.random()*colors.length)];
-    c.style.animationDelay=Math.random()+'s';
-    c.style.animationDuration=(2+Math.random()*2)+'s';
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),5000);
-  }
+ const colors=['#ff4d94','#fff176','#7c4dff','#00e5ff','#ffffff','#ff1744'];
+ for(let i=0;i<amount;i++){
+  const c=document.createElement('div');
+  c.className='confetti';
+  c.style.left=Math.random()*100+'vw';
+  c.style.background=colors[Math.floor(Math.random()*colors.length)];
+  c.style.animationDelay=Math.random()+'s';
+  c.style.animationDuration=(2+Math.random()*2)+'s';
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),5000);
+ }
 }
 
 function restartWish(){
-  score=0;
-  document.getElementById('score').textContent='0';
-  heart.style.display='block';
-  document.getElementById('flame').style.display='block';
-  document.getElementById('giftMessage').classList.add('hidden');
-  document.querySelector('.gift-box').classList.remove('open');
-  showStep(0);
+ score=0;
+ document.getElementById('score').textContent='0';
+ heart.style.display='block';
+ document.getElementById('flame').style.display='block';
+ document.getElementById('giftMessage').classList.add('hidden');
+ document.querySelector('.gift-box').classList.remove('open');
+ showStep(0);
 }
 
 function createFloatingHearts(){
-  setInterval(()=>{
-    const h=document.createElement('div');
-    h.className='heart';
-    h.textContent=['❤️','💖','💕','💗','💘'][Math.floor(Math.random()*5)];
-    h.style.left=Math.random()*100+'vw';
-    h.style.fontSize=(18+Math.random()*25)+'px';
-    h.style.animationDuration=(4+Math.random()*4)+'s';
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),8000);
-  },450);
+ setInterval(()=>{
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent=['❤️','💖','💕','💗','💘'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(18+Math.random()*25)+'px';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+ },450);
 }
 
 function createSparkles(){
-  for(let i=0;i<30;i++){
-    const s=document.createElement('div');
-    s.className='sparkle';
-    s.style.left=Math.random()*100+'vw';
-    s.style.top=Math.random()*100+'vh';
-    s.style.animationDelay=Math.random()*3+'s';
-    document.body.appendChild(s);
-  }
+ for(let i=0;i<25;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  s.style.animationDelay=Math.random()*3+'s';
+  document.body.appendChild(s);
+ }
 }
 
 createFloatingHearts();
